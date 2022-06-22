@@ -70,7 +70,7 @@ header button {
 
 main{
     margin: 100px 10px 10px 10px;
-    height: 85vh;
+    height: 84.25vh;
     border-style: solid;
     border-color: black;
     border-radius: 10px;
@@ -113,10 +113,15 @@ main{
     color: black;
     background-color: white;
 }
+.nav-link{height: 25px;}
 
 .nav-links.dark-mode li .dropdown-menu{
     background-color: black;
     color: white;
+}
+
+h1{
+    margin: 1px 1px;
 }
 #random{
     border-style: none;
@@ -136,15 +141,27 @@ main{
 .planet-info-image{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .planet-info{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    align-self: center;
+    border: 1px black solid;
+    border-radius: 5px;
 }
+
 .planet-info :nth-child(2){
     list-style: none;
+    padding-right: 2rem;
+}
+ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .ticket-value,.submit-ticket{
@@ -182,6 +199,7 @@ main{
 .dwarf-planet-content{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
 #checkout{
@@ -196,6 +214,15 @@ td{
 th,td{
     padding: 1%; 
     border-radius: 10px; 
+}
+
+figure{
+    max-width: 60%;
+    height: auto; 
+} 
+figure img{
+    width: 100%;
+    height: 100%;
 }
 
 @media (orientation: landscape){
@@ -228,12 +255,17 @@ th,td{
         text-align: center;
         background:none;
         width: 90%;
+        padding-top: 2vh;
     }
 
     .nav-links{
         text-align: center;
     }
 
+    .nav-link{
+        height: 10vh; 
+    }
+    
     #dropdown li{
         margin-top: 0;
         margin-bottom: 0;
@@ -247,5 +279,9 @@ th,td{
     .dwarf-planet-content{
         display: flex;
         flex-flow: row nowrap;
+    }
+
+    .dwarf-planet-content p{
+        max-width: 50%S;
     }
 }

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Test
+{% endblock %}
+
+{% block content %}
+<div class="planet-name ticket">
+    <h1>{% block name %}Name{% endblock %}</h1>
+    <form action="/planets/{% block planet2 %}{% endblock %}" method="POST">
+        <input class = "ticket-value" type ="number" id="tickets" name="tickets" min="1">
+        <input style ="display: none" type="text" id="planet-name" name="planet-name" value="{% block planet %}{% endblock %}">
+        <input class="submit-ticket" type="submit" value="Add tickets">
+    </form>
+</div>
+<div>
+    <h3>Summary</h3>
+    <p>{% block summary %}Summary{% endblock %}</p>
+</div>
+<div class="planet-info-image">
+    <div class="planet-info">
+        <ul>
+            <li>Mass:</li>
+            <li>Distance from the Sun (avg):</li>
+            <li>Radius:</li>
+            <li>Orbital period:</li>
+            <li>Length of day:</li>
+        </ul>
+        <ul>
+            <li>{% block mass %}Mass{% endblock %}</li>
+            <li>{% block distance %}Distance{% endblock %}</li>
+            <li>{% block radius %}Radius{% endblock %}</li>
+            <li>{% block orbit %}Orbit{% endblock %}</li>
+            <li>{% block day %}Day{% endblock %}</li>
+        </ul>
+    </div>
+    <figure>
+        {% block image %}
+        <img src="{{url_for('static',filename='images/venus.jpg')}}" height="250px" alt="Planet Venus">
+        <figcaption>Venus</figcaption>
+        {% endblock %}
+    </figure>
+</div>
+
+<div>
+    <h3>Moons</h3>
+    <p>{% block moons %}Moon info{% endblock %}
+    </p>
+</div>
+{% endblock %}

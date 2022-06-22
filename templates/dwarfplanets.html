@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="dwarf-planet-select">
+    <h1>Dwarf Planets</h1>
+    <select name="dwarf-planet" id="dwarf-planet" onchange="showDwarfPlanet(this.value)">
+        <option value="ceres">Ceres</option>
+        <option value="pluto">Pluto</option>
+        <option value="eris">Eris</option>
+        <option value="haumea">Haumea</option>
+        <option value="makemake">Makemake</option>
+    </select>
+</div>
+<div id="ceres">
+    <div>
+        <h3>Ceres</h3>
+        <form action="/dwarf-planets" method="POST">
+            <input class = "ticket-value" type ="number" id="tickets" name="tickets" min="1">
+            <input style ="display: none" type="text" id="planet-name" name="planet-name" value="Ceres">
+            <input class="submit-ticket" type="submit" value="Add tickets">
+        </form>
+    </div>
+    <div class="dwarf-planet-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, similique repellat hic ducimus explicabo sint
+            repellendus doloremque obcaecati animi iure aut sapiente, consequuntur, dolorum asperiores tempore aperiam
+            provident incidunt? Unde.</p>
+        <figure>
+            <img src="{{url_for('static',filename='images/ceres.jpg')}}" height="250px" alt="">
+            <figcaption>Composite image</figcaption>
+        </figure>
+    </div>
+</div>
+
+<div id="pluto">
+    <div>
+        <h3>Pluto</h3>
+        <form action="/dwarf-planets" method="POST">
+            <input class = "ticket-value" type ="number" id="tickets" name="tickets" min="1">
+            <input style ="display: none" type="text" id="planet-name" name="planet-name" value="Pluto">
+            <input class="submit-ticket" type="submit" value="Add tickets">
+        </form>
+    </div>
+    <div class="dwarf-planet-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, similique repellat hic ducimus explicabo sint
+            repellendus doloremque obcaecati animi iure aut sapiente, consequuntur, dolorum asperiores tempore aperiam
+            provident incidunt? Unde.</p>
+        <figure>
+            <img src="{{url_for('static',filename='images/pluto.jpg')}}" height="250px" alt="">
+            <figcaption>Composite image</figcaption>
+
+        </figure>
+    </div>
+</div>
+
+<div id="eris">
+    <div>
+        <h3>Eris</h3>
+        <form action="/dwarf-planets" method="POST">
+            <input class = "ticket-value" type ="number" id="tickets" name="tickets" min="1">
+            <input style ="display: none" type="text" id="planet-name" name="planet-name" value="Eris">
+            <input class="submit-ticket" type="submit" value="Add tickets">
+        </form>
+    </div>
+    <div class="dwarf-planet-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, similique repellat hic ducimus explicabo sint
+            repellendus doloremque obcaecati animi iure aut sapiente, consequuntur, dolorum asperiores tempore aperiam
+            provident incidunt? Unde.</p>
+        <figure>
+            <img src="{{url_for('static',filename='images/eris.jpg')}}" height="250px" alt="">
+            <figcaption>Artist's rendition</figcaption>
+        </figure>
+    </div>
+</div>
+
+<div id="haumea">
+    <div>
+        <h3>Haumea</h3>
+        <form action="/dwarf-planets" method="POST">
+            <input class = "ticket-value" type ="number" id="tickets" name="tickets" min="1">
+            <input style ="display: none" type="text" id="planet-name" name="planet-name" value="Haumea">
+            <input class="submit-ticket" type="submit" value="Add tickets">
+        </form>
+    </div>
+    <div class="dwarf-planet-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, similique repellat hic ducimus explicabo sint
+            repellendus doloremque obcaecati animi iure aut sapiente, consequuntur, dolorum asperiores tempore aperiam
+            provident incidunt? Unde.</p>
+        <figure>
+            <img src="{{url_for('static',filename='images/haumea.gif')}}" height="250px" alt="">
+            <figcaption>Artist's rendition</figcaption>
+        </figure>
+    </div>
+</div>
+
+<div id="makemake">
+    <div>
+        <h3>Makemake</h3>
+        <form action="/dwarf-planets" method="POST">
+            <input class = "ticket-value" type ="number" id="tickets" name="tickets" min="1">
+            <input style ="display: none" type="text" id="planet-name" name="planet-name" value="Makemake">
+            <input class="submit-ticket" type="submit" value="Add tickets">
+        </form>
+    </div>
+    <div class="dwarf-planet-content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, similique repellat hic ducimus explicabo sint
+            repellendus doloremque obcaecati animi iure aut sapiente, consequuntur, dolorum asperiores tempore aperiam
+            provident incidunt? Unde.</p>
+        <figure>
+            <img src="{{url_for('static',filename='images/makemake.jpg')}}" height="250px" alt="">
+            <figcaption>Artist's rendtion</figcaption>
+        </figure>
+    </div>
+</div>
+{% endblock %}

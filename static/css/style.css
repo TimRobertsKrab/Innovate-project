@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: whitesmoke;
+    /* -webkit-text-stroke: 0.25px black; */
+
+}
+
+body{
+    background-image: linear-gradient(rgb(0, 0, 41),rgb(0, 186, 238));
+    background-attachment: fixed;
+} 
+body.dark-mode{
+    background-image: linear-gradient(rgb(128, 128, 128),rgb(0,0,0));
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 2%;
+    border-style: double;
+    border-color: black;
+    position: fixed;
+    top: 0;
+    width:100vw;
+    height: 90px;
+    background-color: whitesmoke;
+}
+.dark-mode{
+    background-color: black;
+}
+
+.dark-mode *{
+    color: white;
+}
+#dark-mode.dark-mode{
+    content: url("../images/sun-icon.png");
+}
+
+header ul{
+    list-style: none;
+    
+}
+header nav{
+    width: 100%;
+}
+
+header button {
+    height: 25px;
+    width: 80px;
+}
+.nav-links{
+    padding: 0;
+    margin: 0;
+}
+.nav-links li{
+    display: inline-block;
+    padding: 0px 3%;
+    margin: 1px 1px;
+    color: black;
+    border-style: ridge;
+    border-color: black;
+    border-radius: 25px;
+}
+.nav-links.dark-mode li{
+    border-color: white;
+}
+
+main{
+    margin: 100px 10px 10px 10px;
+    height: 85vh;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding:10px;
+    overflow: auto;
+}
+.dark-mode main{
+    border-color: white;
+}
+.dropdown-menu{ 
+    width: 150px;
+    text-align: center;
+}
+.dropdown-menu li{
+    background: transparent;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#dropdown li{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#dark-mode{
+    height: 30px; 
+    width: 30px;
+}
+.nav-links li a{
+    color: black;
+    transition: color .15s cubic-bezier(0.64, 0.75, 0.58, 1),background-color .15s ease-in-out,border-color .15s ease-in-out;
+    text-decoration: none;
+}
+
+.nav-links.dark-mode li a{
+    color: white;
+}
+.nav-links.dark-mode li a:hover{
+    color: black;
+    background-color: white;
+}
+
+.nav-links.dark-mode li .dropdown-menu{
+    background-color: black;
+    color: white;
+}
+#random{
+    border-style: none;
+}
+#random button{
+    border-style:dashed;
+    color: black;
+    background-color: white;
+}
+
+.nav-links.dark-mode #random button{
+    color: white;
+    background-color: black;
+    border-color: white;
+}
+
+.planet-info-image{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.planet-info{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+.planet-info :nth-child(2){
+    list-style: none;
+}
+
+.ticket-value,.submit-ticket{
+    color: black;
+    margin-top: 5px;
+}
+.ticket-value{
+    max-width: 50%;
+}
+.planet-name.ticket{
+    display: flex;
+    justify-content: space-between;
+}
+
+#dwarf-planet{
+    color: black;
+    border-color: black;
+}
+
+#dwarf-planet option{
+    color: black;
+}
+
+/* Hidden by default */
+#pluto,#eris,#haumea,#makemake{
+    display: none;
+}
+
+#dwarf-planet-select{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+.dwarf-planet-content{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#checkout{
+    width: 100%;
+}
+th{
+    border: 3px solid black;
+}
+td{
+    border:1px solid black;
+}
+th,td{
+    padding: 1%; 
+    border-radius: 10px; 
+}
+
+@media (orientation: landscape){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 150px;
+        height: 100vh;
+        position: fixed;
+        padding: 5px 0;
+        left: 0;
+    }
+    .logo{
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    main{
+        margin: 10px 10px 10px 160px;
+        height: 97vh;
+    }
+    
+    .dropdown-menu{ 
+        width: 150px;
+    }
+
+    .nav-links li{
+        display: inline-block;
+        margin: 5px 0 5px 0;
+        text-align: center;
+        background:none;
+        width: 90%;
+    }
+
+    .nav-links{
+        text-align: center;
+    }
+
+    #dropdown li{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #dark-mode{
+        cursor: pointer;
+        height: 30px; 
+        width: 30px;
+    }
+    .dwarf-planet-content{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Checkout</h1>
+
+<table id="checkout">
+    <tr>
+        <th>Planet</th>
+        <th>Ticket(s)</th>
+    </tr>
+    {% for t in planet_tickets %}
+    <tr>
+        <td>{{t}}
+        <td>{{planet_tickets[t]}}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

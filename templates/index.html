@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Test
+{% endblock %}
+
+{% block content %}
+<section>
+    <h1>The Solar System</h1>
+    <div style="display: flex; justify-content: center;">
+        <img src="{{url_for('static',filename='images/solar-system.jpg')}}" width="95%" alt="">
+    </div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptates cupiditate maiores non distinctio.
+        Explicabo vitae enim minima vel omnis praesentium voluptatibus sapiente accusamus mollitia deserunt, sit
+        repellat necessitatibus voluptatum inventore maiores accusantium rerum quae eius saepe, sed illo molestias
+        veritatis. Consequuntur repellat ad expedita architecto numquam nisi qui at saepe suscipit commodi, provident
+        quidem officia optio distinctio recusandae debitis. Eos ullam deserunt odit, quia minima cum enim error ab
+        cumque quos amet, quaerat aspernatur. Culpa sunt, hic sit ad quaerat, ut atque incidunt vel doloremque,
+        consequuntur ullam quasi asperiores voluptas reprehenderit facilis. Quasi iusto temporibus hic, illo distinctio
+        totam.</div>
+</section>
+{% endblock %}

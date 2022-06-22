@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{url_for('static',filename='js/main.js')}}"></script>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+  <title>{% block title %}Title{% endblock %}</title>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="{{url_for('views.home')}}"><img class="logo-pic"
+        src="{{url_for('static',filename='images/earth-icon.png')}}" height="64" width="64" alt="HTML 5 Logo"></a>
+    <nav>
+      <ul class="nav-links">
+        <li class="nav-link"><a href="{{url_for('views.home')}}">Home</a></li>
+        <li class="nav-link nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Planets
+          </a>
+          <ul id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{url_for('views.mercury')}}">Mercury</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.venus')}}">Venus</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.earth')}}">Earth</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.mars')}}">Mars</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.jupiter')}}">Jupiter</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.saturn')}}">Saturn</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.uranus')}}">Uranus</a></li>
+            <li><a class="dropdown-item" href="{{url_for('views.neptune')}}">Neptune</a></li>
+          </ul>
+        </li>
+        <li class="nav-link"><a href="{{url_for('views.dwarfplanets')}}">Dwarf Planets</a></li>
+        <li class="nav-link"><a href="{{url_for('views.checkout')}}">Checkout</a></li>
+        <li id="random" class="nav-link">
+          <button onclick="randomPage()">Random</button>
+        </li>
+      </ul>
+    </nav>
+    <img id="dark-mode" src="{{url_for('static',filename='images/moon-icon.png')}}" onclick="darkMode()">
+  </header>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+</body>
+
+</html>

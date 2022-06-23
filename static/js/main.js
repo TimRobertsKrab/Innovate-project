@@ -5,6 +5,7 @@ function darkMode(){
     x[0].classList.toggle("dark-mode");
     i = document.getElementById("dark-mode");
     i.classList.toggle("dark-mode");
+    document.getElementsByTagName("main")[0].classList.toggle("dark-mode");
     document.body.classList.toggle("dark-mode");
 }
 
@@ -59,4 +60,33 @@ function showDwarfPlanet(value){
         haumea.style.display = "none"
         makemake.style.display = "block"
     }    
+}
+
+
+function time(){
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const date = new Date();
+
+    const totalSeconds = date/1000;
+
+    const hours = (Math.floor(totalSeconds/3600)%24) + 1;
+    const mins = Math.floor(totalSeconds/60)%60;
+    const seconds = Math.floor(totalSeconds)%60;
+
+    hoursEl.innerHTML = formatTime(hours);
+    minutesEl.innerHTML = formatTime(mins);
+    secondsEl.innerHTML = formatTime(seconds);
+}
+
+function formatTime(time){
+    return time < 10 ? (`0${time}`):time;
+}
+
+
+setInterval(time,1000)
+
+function error(){
+    alert("Payment functionality coming soon")
 }

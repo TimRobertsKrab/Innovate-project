@@ -43,9 +43,14 @@
       </ul>
     </nav>
     <img id="dark-mode" src="{{url_for('static',filename='images/moon-icon.png')}}" onclick="darkMode()">
+    <div class="clock">
+      <span class="time" id="hours"></span>
+      <span class="time" id="minutes"></span>
+      <span class="time" id="seconds"></span>
+    </div>
   </header>
 
-  <main>
+  <main onload="time()">
     {% block content %}
     {% endblock %}
   </main>

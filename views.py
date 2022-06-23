@@ -1,5 +1,6 @@
 from flask import Flask, render_template, Blueprint, request
 import random as r
+from werkzeug.exceptions import HTTPException
 
 views = Blueprint("views",__name__)
 
@@ -17,8 +18,6 @@ def post_handler(request):
 
 @views.errorhandler(404)
 def page_not_found(e):
-    print("ERROR\n")
-    # return "Broken"
     return render_template("404.html"), 404
 
 @views.route("/")
@@ -77,5 +76,4 @@ def checkout():
 @views.route("/planets")
 def planets():
     return render_template("404.html"),404
-
 

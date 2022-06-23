@@ -12,8 +12,8 @@
   <title>{% block title %}Title{% endblock %}</title>
 </head>
 
-<body>
-  <header>
+<body onload="stateCheck()">
+  <header >
     <a class="logo" href="{{url_for('views.home')}}"><img class="logo-pic"
         src="{{url_for('static',filename='images/earth-icon.png')}}" height="64" width="64" alt="HTML 5 Logo"></a>
     <nav>
@@ -45,7 +45,9 @@
     <img id="dark-mode" src="{{url_for('static',filename='images/moon-icon.png')}}" onclick="darkMode()">
     <div class="clock">
       <span class="time" id="hours"></span>
+      <span class="time">:</span>
       <span class="time" id="minutes"></span>
+      <span class="time">:</span>
       <span class="time" id="seconds"></span>
     </div>
   </header>
@@ -55,6 +57,6 @@
     {% endblock %}
   </main>
 
-</body>
+</body> 
 
 </html>

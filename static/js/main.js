@@ -1,13 +1,13 @@
-function darkMode(){
-    let e = document.getElementsByTagName("header");
-    e[0].classList.toggle("dark-mode");
-    let x = document.getElementsByClassName("nav-links");
-    x[0].classList.toggle("dark-mode");
-    i = document.getElementById("dark-mode");
-    i.classList.toggle("dark-mode");
-    document.getElementsByTagName("main")[0].classList.toggle("dark-mode");
-    document.body.classList.toggle("dark-mode");
-}
+// function darkMode(){
+//     let e = document.getElementsByTagName("header");
+//     e[0].classList.toggle("dark-mode");
+//     let x = document.getElementsByClassName("nav-links");
+//     x[0].classList.toggle("dark-mode");
+//     i = document.getElementById("dark-mode");
+//     i.classList.toggle("dark-mode");
+//     document.getElementsByTagName("main")[0].classList.toggle("dark-mode");
+//     document.body.classList.toggle("dark-mode");
+// }
 
 let pages = ["/planets/mercury","/planets/venus","/planets/earth","/planets/mars","/planets/jupiter","/planets/saturn","/planets/uranus","/planets/neptune", "/dwarf-planets"];
 
@@ -89,4 +89,41 @@ setInterval(time,1000)
 
 function error(){
     alert("Payment functionality coming soon")
+}
+
+function stateCheck() {
+    // console.log(`Page loading ${state}!!`)
+
+    let e = document.getElementsByTagName("header");
+    let x = document.getElementsByClassName("nav-links");
+    console.log(e.length)
+    i = document.getElementById("dark-mode");
+    let isDark = localStorage.getItem("dark")
+    console.log("state check: dark = " + isDark)
+    if (isDark == "true") {
+        e[0].classList.toggle("dark-mode");
+        x[0].classList.toggle("dark-mode");
+        i.classList.toggle("dark-mode");
+        document.getElementsByTagName("main")[0].classList.toggle("dark-mode");
+        document.body.classList.toggle("dark-mode");
+    }
+}
+
+
+function darkMode() {
+    let isDark = localStorage.getItem("dark");
+    
+    let e = document.getElementsByTagName("header");
+    let x = document.getElementsByClassName("nav-links");
+    i = document.getElementById("dark-mode");
+    if (isDark == "true") {
+        localStorage.setItem("dark", "false");
+    } else {
+        localStorage.setItem("dark","true");
+    }
+    e[0].classList.toggle("dark-mode");
+    x[0].classList.toggle("dark-mode");
+    i.classList.toggle("dark-mode");
+    document.getElementsByTagName("main")[0].classList.toggle("dark-mode");
+    document.body.classList.toggle("dark-mode");
 }

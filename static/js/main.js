@@ -96,10 +96,8 @@ function stateCheck() {
 
     let e = document.getElementsByTagName("header");
     let x = document.getElementsByClassName("nav-links");
-    console.log(e.length)
     i = document.getElementById("dark-mode");
     let isDark = localStorage.getItem("dark")
-    console.log("state check: dark = " + isDark)
     if (isDark == "true") {
         e[0].classList.toggle("dark-mode");
         x[0].classList.toggle("dark-mode");

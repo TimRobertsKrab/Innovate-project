@@ -14,8 +14,7 @@ let pages = ["/planets/mercury","/planets/venus","/planets/earth","/planets/mars
 let baseURL = "http://127.0.0.1:8000"
 function randomPage(){
     let i = Math.floor(Math.random() * pages.length);
-    let url = baseURL + pages[i];
-    window.location = url;
+    window.location.pathname = pages[i];
 }
 
 
